@@ -1,0 +1,228 @@
+/* RESET & FONT */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    line-height:1.6;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(244, 245, 248, 0.95);
+    color:#0a2c6d;
+    padding:15px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+}
+
+.navbar ul li{
+    margin-left:20px;
+}
+
+.navbar ul li a{
+    color:#0a2c6d;
+    text-decoration:none;
+    font-weight:500;
+    position:relative;
+}
+
+.navbar ul li a::after{
+    content:'';
+    display:block;
+    height:2px;
+    width:0;
+    background:white;
+    transition:width 0.3s;
+}
+
+.navbar ul li a:hover::after{
+    width:100%;
+}
+
+/* SECTION */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:25px;
+    color:#0a2c6d;
+    font-weight:700;
+    background: linear-gradient(135deg, #0a2c6d, #1a4697);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* HERO */
+.hero{
+    position: relative;
+    color:white;
+    padding:120px 20px;
+    background: linear-gradient(135deg,#0a2c6d,#1a4697);
+    overflow: hidden;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: url('https://www.transparenttextures.com/patterns/cubes.png') repeat;
+    opacity:0.1;
+    pointer-events:none;
+}
+
+.hero h1{
+    font-size:36px;
+    margin-bottom:10px;
+    animation:fadeInDown 1s ease-in-out;
+    position: relative;
+    z-index:1;
+}
+
+.hero p{
+    font-size:18px;
+    color: rgba(255,255,255,0.9);
+    animation:fadeInUp 1s ease-in-out;
+    position: relative;
+    z-index:1;
+}
+
+.profile{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    margin-bottom:20px;
+    border:4px solid white;
+    animation:scaleIn 1s ease-in-out;
+    position: relative;
+    z-index:1;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown{
+    from {opacity:0; transform:translateY(-20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+@keyframes fadeInUp{
+    from {opacity:0; transform:translateY(20px);}
+    to {opacity:1; transform:translateY(0);}
+}
+@keyframes scaleIn{
+    from {opacity:0; transform:scale(0);}
+    to {opacity:1; transform:scale(1);}
+}
+
+/* GRID */
+.grid, .grid-tentang, .grid-layanan{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:20px;
+}
+
+/* CARD STYLE */
+.card, .card-tentang, .card-layanan{
+    background: rgba(255,255,255,0.95);
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover, .card-tentang:hover, .card-layanan:hover{
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 14px 28px rgba(0,0,0,0.15);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.card i, .card-tentang i, .card-layanan i{
+    color:#0a2c6d;
+    margin-bottom:10px;
+}
+
+/* SECTION BACKGROUND */
+.tentang{
+    background: linear-gradient(120deg,#f0f4ff,#ffffff);
+}
+
+.keahlian{
+    background: linear-gradient(120deg,#ffffff,#f0f4ff);
+}
+
+.proyek{
+    background: linear-gradient(120deg,#ffffff,#e6f0ff);
+}
+
+.layanan{
+    background: linear-gradient(120deg,#f9f9f9,#e6f0ff);
+}
+
+/* KONTAK */
+.kontak a{
+    color:#0a2c6d;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.kontak a:hover{
+    color:#1a4697;
+}
+
+footer{
+    background:#0a2c6d;
+    color:white;
+    text-align:center;
+    padding:25px 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .navbar{
+        flex-direction:column;
+    }
+    .navbar ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-top:10px;
+    }
+    .profile{
+        width:130px;
+        height:130px;
+    }
+    .hero h1{
+        font-size:28px;
+    }
+    .hero p{
+        font-size:16px;
+    }
+}
